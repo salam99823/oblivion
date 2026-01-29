@@ -155,7 +155,7 @@ label rutine:
     if repetitions > 0:
         $ repetitions -= 1
         jump rutine
-    call splash_text("Таймскип")
+    call splash_text("Несколько дней спустя.")
     scene bg bar
     with fade
     player "{i}Ах, опять одни и те же люди...{i}"
@@ -189,7 +189,7 @@ label rutine:
         distance, right_center, yalign 0.7
     with dissolve
     player """
-    {i}Знакомая {color="2a2a78"}Бориса{/color}?{/i}
+    {i}Знакомая {color=#2a2a78}Бориса{/color}?{/i}
 
     {i}Ммм...{/i}
 
@@ -233,7 +233,7 @@ label rutine:
     lisa """
     Забыла представиться...
 
-    Меня зовут {color="ffe5b4"}Лиза{/color}!
+    Меня зовут {color=#ffe5b4}Лиза{/color}!
 
     Я вчера видела тебя в баре и привела домой.
     """ 
@@ -267,7 +267,7 @@ label rutine:
     show lisa at distance
     with fade
     """
-    Этой же ночью в баре я опять встретил {color="ffe5b4"}Лизу{/color}, она сидела на расстоянии.
+    Этой же ночью в баре я опять встретил {color=#ffe5b4}Лизу{/color}, она сидела на расстоянии.
 
     Видимо, держала дистанцию.
 
@@ -292,7 +292,7 @@ label rutine:
     """
     $ print(repr(lisa))
     player """
-    Тогда {color="ffe5b4"}Лиза{/color} опять привела меня домой...
+    Тогда {color=#ffe5b4}Лиза{/color} опять привела меня домой...
 
     На протяжении следующих трёх месяцев она от меня не отставала.
 
@@ -326,7 +326,7 @@ label rutine:
     Я очень хочу!
     """ 
 
-label end:
+label final_choice:
     menu:
         "А что у тебя случилось?":
             jump good_end
@@ -384,14 +384,14 @@ label good_end:
     Будем исключать любую выпивку по чуть-чуть пока совсем не перестанешь пить.
     """
     """
-    {color="ffe5b4"}Лиза{/color} оказалась хорошим другом.
+    {color=#ffe5b4}Лиза{/color} оказалась хорошим другом.
 
     Она всеми силами пыталась меня отогнать от выпивки и,
     спустя долгое время, это ей удалось.
 
     Я даже стал выглядеть намного лучше, чем раньше.
 
-    {color="2a2a78"}Борис{/color} предложил мне работу в баре и я согласился,
+    {color=#2a2a78}Борис{/color} предложил мне работу в баре и я согласился,
     почему бы и нет?
     """
     scene bg church
@@ -416,7 +416,7 @@ label good_end:
     jump end
 
 label bad_end:
-    "[player] выгоняет {color="ffe5b4"}Лизу{/color} с громким хлопком двери"
+    "[player] выгоняет {color=#ffe5b4}Лизу{/color} с громким хлопком двери"
 
     player """
     {i}Прикопалась...{/i}
