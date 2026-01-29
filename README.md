@@ -1,2 +1,3 @@
 # oblivion
-Visual novel for colladge project.
+
+Visual novel for college project.
