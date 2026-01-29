@@ -6,7 +6,6 @@ define manager = Character(_("Менеджер"), image="manager")
 define lisa = Character(_("Лиза"), image="lisa", color="#ffe5b4")
 define priest = Character(_("Батюшка"), image="priest", color="#75a83e")
 
-
 init:
     transform left_center:
         xalign 0.2
@@ -15,7 +14,7 @@ init:
     transform grayscale:
         matrixcolor SaturationMatrix(0.5)
     transform silhouette:
-        center, yalign 0.53 
+        center, yalign 0.53
     transform distance:
         zoom 0.5, align (0.5, 0.8)
 
@@ -31,7 +30,7 @@ label start:
     return
 
 label splash_text(text=None):
-    scene black with fade
+    scene black
     if text:
         show text "{size=80}[text]{/size}" with dissolve
         with Pause(2)

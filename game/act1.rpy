@@ -9,7 +9,6 @@
 label act1:
 label work_day_at_fastfood:
     scene bg fastfood sunset
-    with fade
     pause 1
     show silhouette 1 at silhouette
     with dissolve
@@ -100,17 +99,16 @@ label work_day_at_fastfood:
     hide silhouette
     hide manager
     with dissolve
-    scene bg fastfood night with fade
+    scene bg fastfood night
 
     "Оставшаяся чать смены прошла обыденно"
     player "{i}наконец-то это кончилось{/i}"
 
     # Player leaving fastfood
     scene black
-    with fade
     "{i}Щелчок замка.{/i}"
 
-    scene street with fade
+    scene street
     """
     Холодный ночной воздух бьет в лицо.
 
@@ -138,7 +136,7 @@ label work_day_at_fastfood:
     """
 
 label bar_scene:
-    scene bg bar with fade
+    scene bg bar
     """
     [player_name] падает на высокий стул в самом углу, подальше от ламп.
 
@@ -148,7 +146,7 @@ label bar_scene:
     show boris at right
     with dissolve
     """
-    Бармен, не задавая вопросов, 
+    Бармен, не задавая вопросов,
     привычным жестом пускает стакан по отполированной стойке.
 
     Стекло со стуком останавливается прямо перед его рукой.
@@ -168,7 +166,6 @@ label bar_scene:
 
     # TODO: Add club dance music
     scene black
-    with fade
     pause 2
 
 label morning_scare:
@@ -186,6 +183,5 @@ label morning_scare:
     pause 2
 
     scene bg bedroom evening
-    with fade
     player "Ээээхх"
 

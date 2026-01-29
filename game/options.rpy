@@ -71,6 +71,8 @@ define config.has_voice = False
 ## переменная должна задавать переход или None, чтобы указать на то, что переход
 ## не должен использоваться.
 
+define _scene_show_hide_transition = Dissolve(0.25)
+
 ## Вход и выход в игровое меню.
 
 define config.enter_transition = dissolve
@@ -89,7 +91,7 @@ define config.after_load_transition = None
 
 ## Используется при входе в главное меню после того, как игра закончится.
 
-define config.end_game_transition = None
+define config.end_game_transition = Fade(0.5)
 
 
 ## Переменная, устанавливающая переход, когда старт игры не существует. Вместо
