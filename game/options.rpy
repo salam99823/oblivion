@@ -183,6 +183,7 @@ init python:
     ## Классифицируйте файлы как None, чтобы исключить их из дистрибутивов.
 
     build.classify('**~', None)
+    build.classify('itch-assets/**', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
     build.classify('**/#**', None)
