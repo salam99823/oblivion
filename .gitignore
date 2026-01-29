@@ -19,6 +19,7 @@
 /log.txt
 /save_dump.txt
 /traceback.txt
+/*-dists/**
 
 # Launcher-generated files.
 /dialogue.tab
