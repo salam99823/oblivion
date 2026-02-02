@@ -100,7 +100,8 @@ label pit_of_the_bottle:
     show mirror behind player_face at center, top
     with fade
     pause 1
-    show player_face at silhouette
+    show player_face:
+        silhouette, zoom 0.85
     with dissolve
     player """
     {static}{i}Ой мамочки...{/i}{/static}
@@ -297,7 +298,7 @@ label rutine:
     """
     call splash_text("В один день")
     scene bg kitchen
-    show lisa
+    show lisa sad
     with fade
     lisa """
     [player]!
