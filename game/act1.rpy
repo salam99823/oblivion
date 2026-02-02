@@ -171,13 +171,13 @@ label morning_scare:
     # TODO: Add alarm clock sound
     scene black
 
-    show phone ringing at truecenter
+    show phone at truecenter
     with fade
     pause 2
-    hide phone ringing at truecenter
+    hide phone at truecenter
     with dissolve
     pause 3
-    show phone ringing at truecenter
+    show phone at truecenter
     with dissolve
     pause 2
 
