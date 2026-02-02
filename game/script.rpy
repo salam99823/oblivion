@@ -17,10 +17,10 @@ init:
     transform silhouette:
         center, yalign 0.53 
     transform distance:
-        zoom 0.5, align (0.5, 0.8)
+        zoom 0.8, align (0.5, 0.8)
 
 label start:
-    $ player_name = renpy.input(_("Как вас зовут?"), length=10, default=_("Женя"))
+    $ player_name = renpy.input(_("Как вас зовут?"), length=12, default=_("Женя"))
     $ player_name = player_name.strip().capitalize()
     if not player_name:
       $ player_name = _("Женя")
@@ -30,11 +30,14 @@ label start:
     call act3
     return
 
-label splash_text(text=None):
+label splash_text(text=None, delay=2, size=80):
     scene black with fade
     if text:
-        show text "{size=80}[text]{/size}" with dissolve
-        with Pause(2)
+        show text "{size=[size]}[text]{/size}" with dissolve
+        if delay:
+            with Pause(delay)
+        else:
+            pause
         hide text with dissolve
         with Pause(1)
     else:

@@ -8,8 +8,7 @@
 #
 label act1:
 label work_day_at_fastfood:
-    scene bg fastfood sunset
-    with fade
+    scene bg fastfood with fade
     pause 1
     show silhouette 1 at silhouette
     with dissolve
@@ -18,7 +17,7 @@ label work_day_at_fastfood:
 
     customer "У вас есть трубочки для коктейлей?"
     player """
-    {i}Боже, ну каким же тупым можно быть...{/i}
+    {static}{i}Боже, ну каким же тупым можно быть...{/i}{/static}
 
     Они лежат прямо на подносе, посмотрите внимательнее.
     """
@@ -31,7 +30,7 @@ label work_day_at_fastfood:
     player """
     {i}вздыхает{/i}
 
-    {i}И почему все жалобы должен выслушивать именно я...{/i}
+    {static}{i}И почему все жалобы должен выслушивать именно я...{/i}{/static}
 
     Вы читали состав?
 
@@ -65,9 +64,9 @@ label work_day_at_fastfood:
     """
 
     # NOTE: Good place for some choice
-    "[player_name] немедленно идет звать менеджера."
+    "[player] немедленно идет звать менеджера."
 
-    show silhouette 1 at right_center
+    show silhouette 2 at right_center
     with move
     show manager at silhouette, left_center
     with dissolve
@@ -95,29 +94,27 @@ label work_day_at_fastfood:
 
     {i}лучезарно улыбается{/i}
     """
-    customer "{i}чуть громче{/i} Хорошо."
+    customer "{i}чуть громче{/i}{p}Хорошо."
 
     hide silhouette
     hide manager
     with dissolve
     scene bg fastfood night with fade
 
-    "Оставшаяся чать смены прошла обыденно"
-    player "{i}наконец-то это кончилось{/i}"
+    "Оставшаяся часть смены прошла обыденно"
+    player "{static}{i}Наконец-то это кончилось.{/i}{/static}"
 
     # Player leaving fastfood
-    scene black
-    with fade
-    "{i}Щелчок замка.{/i}"
+    scene bg street with fade
+    "{i}щелчок замка{/i}"
 
-    scene street with fade
     """
     Холодный ночной воздух бьет в лицо.
 
     Но не приносит свежести — только запах мокрого асфальта
     и дешевого фритюра, въевшегося в одежду.
 
-    [player_name] натягивает капюшон.
+    [player] натягивает капюшон.
     """
 
     player """
@@ -140,7 +137,7 @@ label work_day_at_fastfood:
 label bar_scene:
     scene bg bar with fade
     """
-    [player_name] падает на высокий стул в самом углу, подальше от ламп.
+    [player] падает на высокий стул в самом углу, подальше от ламп.
 
     Он чувствует себя тенью среди теней.
     """
@@ -162,9 +159,8 @@ label bar_scene:
 
     За то, чтобы забыть.
     """
-    with wipeup
 
-    "Мир начинает вибрировать и теряет что-то..."
+    "Мир начинает {shader=jitter}вибрировать и теряет что-то...{/shader}"
 
     # TODO: Add club dance music
     scene black
@@ -185,7 +181,6 @@ label morning_scare:
     with dissolve
     pause 2
 
-    scene bg bedroom evening
-    with fade
+    scene bg bedroom evening with fade
     player "Ээээхх"
 

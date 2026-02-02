@@ -13,16 +13,15 @@
 #
 label act2:
 label last_work_day_at_fastfood:
-    scene bg fastfood night
-    with fade
+    scene bg fastfood night with fade
     player """
-    {i}Фух...{/i}
+    Фух...
 
-    {i}Эти тринадцать часов шли целую вечность...{/i}
+    {static}{i}Эти тринадцать часов шли целую вечность...{/i}{/static}
     """
-    manager "Эй, Женя, подойди на секунду пожалуйста"
+    manager "Эй, [player], подойди на секунду пожалуйста"
     player """
-    {i}Эх, а я уже представлял, как буду после смены отдыхать...{/i}
+    {static}{i}Эх, а я уже представлял, как буду после смены отдыхать...{/i}{/static}
 
     {i}уставшим голосом{/i}
 
@@ -63,7 +62,7 @@ label last_work_day_at_fastfood:
     Тебе так будет лучше.
     """
     player """
-    {i}Видимо спорить с ним безнадёжно...{/i}
+    {static}{i}Видимо спорить с ним безнадёжно...{/i}{/static}
 
     Я Вас понял...
     """
@@ -76,49 +75,48 @@ label pit_of_the_bottle:
 
     Просыпался я где-то к обеду
     """
-    show bg bedroom day with dissolve
-    extend "и ел доширак."
+    show bg bedroom with dissolve
+    extend " и ел доширак."
     "Денег у меня было мало, благо они стоили не так много."
     # TODO: maybe we need to show money or empty wallet
     "К вечеру шёл в один и тот же бар."
     scene bg bar
     show boris
     with fade
-    "Здешний бармен {color="2a2a78"}Борис{/color} кажется уже мог узнать меня даже издалека..."
+    "Здешний бармен Борис кажется уже мог узнать меня даже издалека..."
     scene black with fade
     player """
-    {i}Голова опять раскалывается...{/i}
+    {static}{i}Голова опять раскалывается...{/i}{/static}
 
-    {i}Который час?{/i}
+    {static}{i}Который час?{/i}{/static}
     """
-    scene bg bedroom
+    scene bg bedroom with fade
     player """
     Охх...
 
-    {i}Еще не вечер{/i}
+    {static}{i}Еще не вечер.{/i}{/static}
     """
-    scene bg bathroom 
+    scene bg bathroom with fade
     show mirror behind player_face at center, top
     with fade
     pause 1
     show player_face at silhouette
     with dissolve
     player """
-    {i}Ой мамочки...{/i}
+    {static}{i}Ой мамочки...{/i}{/static}
 
-    {i}Я выгляжу даже хуже, чем обычно...{/i}
+    {static}{i}Я выгляжу даже хуже, чем обычно...{/i}{/static}
 
-    {i}Или я так всегда выгляжу?{/i}
+    {static}{i}Или я так всегда выгляжу?{/i}{/static}
     """
 
-    scene bg bedroom day
-    with fade
-    "Тянется к кошельку"
+    scene bg bedroom with fade
+    "{i}Тянется к кошельку{/i}"
 
     player """
-    {i}Мдааа...{/i}
+    {static}{i}Мдааа...{/i}{/static}
 
-    {i}Не думал, что деньги так быстро кончатся{/i}
+    {static}{i}Не думал, что деньги так быстро кончатся.{/i}{/static}
     """
     # Звонит какому-то давнему знакомому
     # TODO: add telephone dial tone
@@ -129,15 +127,15 @@ label pit_of_the_bottle:
     """
     # Несколько звонков спустя ему подкидывают немного деньжат
     player """
-    {i}Этого должно хватить не некоторое время...{/i}
+    {static}{i}Этого должно хватить не некоторое время...{/i}{/static}
 
-    {i}Я надеюсь...{/i}
+    {static}{i}Я надеюсь...{/i}{/static}
     """
     # Тут просто рутина. Опять. Дом - бар, бар - дом и так по кругу.
     scene black
     define repetitions = 3
 label rutine:
-    show bg bedroom day
+    show bg bedroom
     with dissolve
     pause 0.5
     show bg bedroom night
@@ -156,9 +154,8 @@ label rutine:
         $ repetitions -= 1
         jump rutine
     call splash_text("Несколько дней спустя.")
-    scene bg bar
-    with fade
-    player "{i}Ах, опять одни и те же люди...{i}"
+    scene bg bar with fade
+    player "{static}{i}Ах, опять одни и те же люди...{/i}{/static}"
     # Допивает ещё рюмку
     """
     Этот вечер был как и все остальные.
@@ -174,48 +171,47 @@ label rutine:
     # Заходит Лиза
     # TODO: maybe add sound of the door opening
     player """
-    {i}О?{/i}
+    {static}{i}О?{/i}{/static}
 
-    {i}Я её раньше не видел.{/i}
+    {static}{i}Я её раньше не видел.{/i}{/static}
 
-    {i}Или видел...{/i}
+    {static}{i}Или видел...{/i}{/static}
 
-    {i}Я уже ничего не знаю...{/i}
+    {static}{i}Я уже ничего не знаю...{/i}{/static}
     """
     # видит как она .разговаривает с Борисом
-    # TODO: add Boris and Lisa in the distance
-    show lisa at distance
+    show lisa:
+        distance, yalign 1.2
     show boris:
-        distance, right_center, yalign 0.7
+        distance, right
     with dissolve
     player """
-    {i}Знакомая {color=#2a2a78}Бориса{/color}?{/i}
+    {static}{i}Знакомая Бориса?{/i}{/static}
 
-    {i}Ммм...{/i}
+    {static}{i}Ммм...{/i}{/static}
 
-    {i}Мне-то что...{/i}
+    {static}{i}Мне-то что...{/i}{/static}
     """
     # Закрывает на секунду глаза и резко просыпается в кровати
     scene black
     with fade
     pause 1
-    scene bg bedroom evening
-    with fade
+    scene bg bedroom with fade
     # с трудом просыпается
     player """
-    {i}Ну здравствуй новый день...{/i}
+    {static}{i}Ну здравствуй новый день...{/i}{/static}
 
-    {i}Как я тебя жду.{/i}
+    {static}{i}Как я тебя жду.{/i}{/static}
     """
     # TODO: add some noises from kitchen
     "Слышит звуки на кухне"
-    player "{i}кто это ещё на моей кухне...{/i}"
+    player "{static}{i}кто это ещё на моей кухне...{/i}{/static}"
     scene bg kitchen
     show lisa
     with fade
     # Видит девушку и, почему-то, он знает, что она та самая из бара
     player """
-    {i}ЧТО ОНА ТУТ ДЕЛАЕТ?{/i}
+    {static}{i}ЧТО ОНА ТУТ ДЕЛАЕТ?{/i}{/static}
 
     кхм кхм...
 
@@ -233,7 +229,7 @@ label rutine:
     lisa """
     Забыла представиться...
 
-    Меня зовут {color=#ffe5b4}Лиза{/color}!
+    Меня зовут Лиза!
 
     Я вчера видела тебя в баре и привела домой.
     """ 
@@ -254,20 +250,20 @@ label rutine:
 
     Мне и без тебя проблем хватает.
     """
-    lisa """
+    lisa @ sad """
     Хорошо...
 
     Я приду ещё в бар потом!
     """
     hide lisa with dissolve
     #Лиза тихо уходит
-    player "{i}И что ей надо от меня...{/i}"
+    player "{static}{i}И что ей надо от меня...{/i}{/static}"
 
     scene bg bar
     show lisa at distance
     with fade
     """
-    Этой же ночью в баре я опять встретил {color=#ffe5b4}Лизу{/color}, она сидела на расстоянии.
+    Этой же ночью в баре я опять встретил Лизу, она сидела на расстоянии.
 
     Видимо, держала дистанцию.
 
@@ -276,7 +272,7 @@ label rutine:
 
     Воспоминания накрыли волной, было сложно дышать.
 
-    Вроде бы люди называют это...
+    Вроде бы это называют...
 
     Панической атакой?
 
@@ -288,11 +284,10 @@ label rutine:
     ВООБЩЕ НИКОГО ИЗ ВАС НЕ ВИЖУ...
     """
     """
-    {i}Захлёбывается слезами и резко падает{/i}
+    {static}{i}захлёбывается слезами и резко падает{/i}{/static}
     """
-    $ print(repr(lisa))
     player """
-    Тогда {color=#ffe5b4}Лиза{/color} опять привела меня домой...
+    Тогда Лиза опять привела меня домой...
 
     На протяжении следующих трёх месяцев она от меня не отставала.
 
@@ -301,8 +296,11 @@ label rutine:
     Если видела, что мне неудобно её присутствие, то сразу уходила без слова.
     """
     call splash_text("В один день")
+    scene bg kitchen
+    show lisa
+    with fade
     lisa """
-    Женя!
+    [player]!
 
     Дай мне тебе помочь, пожалуйста.
 
@@ -384,17 +382,17 @@ label good_end:
     Будем исключать любую выпивку по чуть-чуть пока совсем не перестанешь пить.
     """
     """
-    {color=#ffe5b4}Лиза{/color} оказалась хорошим другом.
+    Лиза оказалась хорошим другом.
 
     Она всеми силами пыталась меня отогнать от выпивки и,
     спустя долгое время, это ей удалось.
 
     Я даже стал выглядеть намного лучше, чем раньше.
 
-    {color=#2a2a78}Борис{/color} предложил мне работу в баре и я согласился,
+    Борис предложил мне работу в баре и я согласился,
     почему бы и нет?
     """
-    scene bg church
+    scene bg church with fade
     player """
     И сейчас, пройдя все эти испытания, я стою здесь.
 
@@ -412,11 +410,11 @@ label good_end:
     Я научился помнить её без боли, которая меня разрушает.
     Лица вокруг меня больше не силуэты. Они — часть мира,
     в котором я решил остаться трезвым.
-    """)
+    """, 0, 40)
     jump end
 
 label bad_end:
-    "[player] выгоняет {color=#ffe5b4}Лизу{/color} с громким хлопком двери"
+    "[player] выгоняет Лизу с громким хлопком двери"
 
     player """
     {i}Прикопалась...{/i}
@@ -425,7 +423,7 @@ label bad_end:
     """
 
     """
-    Женя продолжает жить так же, как и раньше.
+    [player] продолжает жить так же, как и раньше.
 
     Панические атаки сопровождают его каждый день.
 

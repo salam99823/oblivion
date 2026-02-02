@@ -12,7 +12,7 @@
 ##
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
-define config.name = _("oblivion")
+define config.name = _("Забвение")
 
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
@@ -121,7 +121,9 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 100
+default preferences.text_cps = 80
+
+define config.default_textshader = "typewriter"
 
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания,
