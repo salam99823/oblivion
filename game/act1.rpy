@@ -16,7 +16,7 @@ label work_day_at_fastfood:
     # TODO: Add work noise
 
     customer "У вас есть трубочки для коктейлей?"
-    player """
+    z """
     {static}{i}Боже, ну каким же тупым можно быть...{/i}{/static}
 
     Они лежат прямо на подносе, посмотрите внимательнее.
@@ -24,10 +24,10 @@ label work_day_at_fastfood:
     customer "Спасибо."
     hide silhouette 1 with dissolve
 
-    player "Эххх"
+    z "Эххх"
 
     show silhouette 2 at silhouette with dissolve
-    player """
+    z """
     {i}вздыхает{/i}
 
     {static}{i}И почему все жалобы должен выслушивать именно я...{/i}{/static}
@@ -41,7 +41,7 @@ label work_day_at_fastfood:
     Надо было учиться читать, пока была возможность...
     """
     customer "С чего это я должен его читать?!"
-    player """
+    z """
     Наверное, потому что вы за него платите?
 
     Очевидно же.
@@ -53,7 +53,7 @@ label work_day_at_fastfood:
 
     Пацан, не тебе меня жизни учить!
     """
-    player """
+    z """
     {i}про себя{/i}
 
     Ну всё...
@@ -64,7 +64,7 @@ label work_day_at_fastfood:
     """
 
     # NOTE: Good place for some choice
-    "[player] немедленно идет звать менеджера."
+    "[z] немедленно идет звать менеджера."
 
     show silhouette 2 at right_center
     with move
@@ -102,9 +102,8 @@ label work_day_at_fastfood:
     scene bg fastfood night with fade
 
     "Оставшаяся часть смены прошла обыденно"
-    player "{static}{i}Наконец-то это кончилось.{/i}{/static}"
+    z "{static}{i}Наконец-то это кончилось.{/i}{/static}"
 
-    # Player leaving fastfood
     scene bg street with fade
     "{i}щелчок замка{/i}"
 
@@ -114,10 +113,10 @@ label work_day_at_fastfood:
     Но не приносит свежести — только запах мокрого асфальта
     и дешевого фритюра, въевшегося в одежду.
 
-    [player] натягивает капюшон.
+    [z] натягивает капюшон.
     """
 
-    player """
+    z """
     Еще один день впустую.
 
     Еще одна пачка часов, брошенная в шредер.
@@ -137,7 +136,7 @@ label work_day_at_fastfood:
 label bar_scene:
     scene bg bar with fade
     """
-    [player] падает на высокий стул в самом углу, подальше от ламп.
+    [z] падает на высокий стул в самом углу, подальше от ламп.
 
     Он чувствует себя тенью среди теней.
     """
@@ -154,7 +153,7 @@ label bar_scene:
     with dissolve
 
     # TODO: Add drinking sound
-    player """
+    z """
     {i}про себя{/i}
 
     За то, чтобы забыть.
@@ -169,18 +168,26 @@ label bar_scene:
 
 label morning_scare:
     # TODO: Add alarm clock sound
-    scene black
-
-    show phone at truecenter
+    image animated_phone:
+        "phone.png"
+        truecenter, rotate 25
+        block:
+            block:
+                linear 0.05 rotate 23.0 counterclockwise
+                linear 0.05 rotate 27.0 clockwise
+                repeat 10
+            pause 1
+            repeat
+    show animated_phone
     with fade
-    pause 2
-    hide phone at truecenter
+    pause 5
+    hide animated_phone
     with dissolve
-    pause 3
-    show phone at truecenter
+    pause 5
+    show animated_phone
     with dissolve
-    pause 2
+    pause 5
 
     scene bg bedroom evening with fade
-    player "Ээээхх"
+    z "Ээээхх"
 

@@ -184,6 +184,7 @@ init python:
 
     build.classify('**~', None)
     build.classify('itch-assets/**', None)
+    build.classify('**-dists/**', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
     build.classify('**/#**', None)

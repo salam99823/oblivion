@@ -14,13 +14,13 @@
 label act2:
 label last_work_day_at_fastfood:
     scene bg fastfood night with fade
-    player """
+    z """
     Фух...
 
     {static}{i}Эти тринадцать часов шли целую вечность...{/i}{/static}
     """
-    manager "Эй, [player], подойди на секунду пожалуйста"
-    player """
+    manager "Эй, [z], подойди на секунду пожалуйста"
+    z """
     {static}{i}Эх, а я уже представлял, как буду после смены отдыхать...{/i}{/static}
 
     {i}уставшим голосом{/i}
@@ -45,7 +45,7 @@ label last_work_day_at_fastfood:
 
     Вот твоя зарплата за полмесяца.
     """
-    player """
+    z """
     Но...
 
     Пожалуйста!
@@ -61,7 +61,7 @@ label last_work_day_at_fastfood:
 
     Тебе так будет лучше.
     """
-    player """
+    z """
     {static}{i}Видимо спорить с ним безнадёжно...{/i}{/static}
 
     Я Вас понял...
@@ -85,13 +85,13 @@ label pit_of_the_bottle:
     with fade
     "Здешний бармен Борис кажется уже мог узнать меня даже издалека..."
     scene black with fade
-    player """
+    z """
     {static}{i}Голова опять раскалывается...{/i}{/static}
 
     {static}{i}Который час?{/i}{/static}
     """
     scene bg bedroom with fade
-    player """
+    z """
     Охх...
 
     {static}{i}Еще не вечер.{/i}{/static}
@@ -103,7 +103,7 @@ label pit_of_the_bottle:
     show player_face:
         silhouette, zoom 0.85
     with dissolve
-    player """
+    z """
     {static}{i}Ой мамочки...{/i}{/static}
 
     {static}{i}Я выгляжу даже хуже, чем обычно...{/i}{/static}
@@ -114,27 +114,27 @@ label pit_of_the_bottle:
     scene bg bedroom with fade
     "{i}Тянется к кошельку{/i}"
 
-    player """
+    z """
     {static}{i}Мдааа...{/i}{/static}
 
     {static}{i}Не думал, что деньги так быстро кончатся.{/i}{/static}
     """
     # Звонит какому-то давнему знакомому
     # TODO: add telephone dial tone
-    player """
+    z """
     Ало, аaa...
 
     Привет, слушай...
     """
     # Несколько звонков спустя ему подкидывают немного деньжат
-    player """
+    z """
     {static}{i}Этого должно хватить не некоторое время...{/i}{/static}
 
     {static}{i}Я надеюсь...{/i}{/static}
     """
     # Тут просто рутина. Опять. Дом - бар, бар - дом и так по кругу.
-    scene black
-    define repetitions = 3
+    scene black with fade
+    define repetitions = 2
 label rutine:
     show bg bedroom
     with dissolve
@@ -156,7 +156,7 @@ label rutine:
         jump rutine
     call splash_text("Несколько дней спустя.")
     scene bg bar with fade
-    player "{static}{i}Ах, опять одни и те же люди...{/i}{/static}"
+    z "{static}{i}Ах, опять одни и те же люди...{/i}{/static}"
     # Допивает ещё рюмку
     """
     Этот вечер был как и все остальные.
@@ -171,7 +171,11 @@ label rutine:
     """
     # Заходит Лиза
     # TODO: maybe add sound of the door opening
-    player """
+    show lisa:
+        distance, yalign 1.2
+    show boris at distance, right
+    with dissolve
+    z """
     {static}{i}О?{/i}{/static}
 
     {static}{i}Я её раньше не видел.{/i}{/static}
@@ -181,12 +185,7 @@ label rutine:
     {static}{i}Я уже ничего не знаю...{/i}{/static}
     """
     # видит как она .разговаривает с Борисом
-    show lisa:
-        distance, yalign 1.2
-    show boris:
-        distance, right
-    with dissolve
-    player """
+    z """
     {static}{i}Знакомая Бориса?{/i}{/static}
 
     {static}{i}Ммм...{/i}{/static}
@@ -199,19 +198,19 @@ label rutine:
     pause 1
     scene bg bedroom with fade
     # с трудом просыпается
-    player """
+    z """
     {static}{i}Ну здравствуй новый день...{/i}{/static}
 
     {static}{i}Как я тебя жду.{/i}{/static}
     """
     # TODO: add some noises from kitchen
     "Слышит звуки на кухне"
-    player "{static}{i}кто это ещё на моей кухне...{/i}{/static}"
+    z "{static}{i}кто это ещё на моей кухне...{/i}{/static}"
     scene bg kitchen
     show lisa
     with fade
     # Видит девушку и, почему-то, он знает, что она та самая из бара
-    player """
+    z """
     {static}{i}ЧТО ОНА ТУТ ДЕЛАЕТ?{/i}{/static}
 
     кхм кхм...
@@ -226,7 +225,7 @@ label rutine:
 
     Ты так хорошо спал, не хотелось тебя будить.
     """
-    player "Вы кто вообще?"
+    z "Вы кто вообще?"
     lisa """
     Забыла представиться...
 
@@ -234,7 +233,7 @@ label rutine:
 
     Я вчера видела тебя в баре и привела домой.
     """ 
-    player "В этом не было необходимости..."
+    z "В этом не было необходимости..."
     lisa """
     Прости, ты меня привлёк.
 
@@ -244,7 +243,7 @@ label rutine:
 
     Ты не был похож на других.
     """
-    player """
+    z """
     Знаешь что?
 
     Мне это не особо интересно, просто уйди...
@@ -258,7 +257,7 @@ label rutine:
     """
     hide lisa with dissolve
     #Лиза тихо уходит
-    player "{static}{i}И что ей надо от меня...{/i}{/static}"
+    z "{static}{i}И что ей надо от меня...{/i}{/static}"
 
     scene bg bar
     show lisa at distance
@@ -279,7 +278,7 @@ label rutine:
 
     Я помню, как кричал что-то...
     """
-    player """
+    z """
     Я НИЧЕГО НЕ ВИЖУ, ПОНИМАЕТЕ??
 
     ВООБЩЕ НИКОГО ИЗ ВАС НЕ ВИЖУ...
@@ -287,7 +286,7 @@ label rutine:
     """
     {static}{i}захлёбывается слезами и резко падает{/i}{/static}
     """
-    player """
+    z """
     Тогда Лиза опять привела меня домой...
 
     На протяжении следующих трёх месяцев она от меня не отставала.
@@ -301,13 +300,13 @@ label rutine:
     show lisa sad
     with fade
     lisa """
-    [player]!
+    [z]!
 
     Дай мне тебе помочь, пожалуйста.
 
     Я же вижу, что ты страдаешь.
     """
-    player "Зачем тебе это?" 
+    z "Зачем тебе это?" 
     lisa """
     Я сама в похожей ситуации была...
 
@@ -317,8 +316,8 @@ label rutine:
 
     После этого я поняла, что не всегда принимать помощь - значит быть слабым.
     """
-    player "..." 
-    player "Ты серьёзно хочешь помочь?" 
+    z "..." 
+    z "Ты серьёзно хочешь помочь?" 
     lisa """
     Да!
 
@@ -359,7 +358,7 @@ label good_end:
     Оказалось, что он в тайне от меня задолжал космическую сумму 
     и за это его избили до смерти. 
     """
-    player """
+    z """
     {i}Воу...{/i}
     {i}Не думал, что у такой жизнерадостной девушки случилось такое горе{/i}
 
@@ -372,7 +371,7 @@ label good_end:
 
     Я уже смирилась и привожу эту историю как пример влияния таких зависимостей.
     """
-    player """
+    z """
     Иии...
 
     Как ты думаешь мне помочь?
@@ -394,7 +393,7 @@ label good_end:
     почему бы и нет?
     """
     scene bg church with fade
-    player """
+    z """
     И сейчас, пройдя все эти испытания, я стою здесь.
 
     Сила воли и близкие люди могут помочь преодолеть разные невзгоды.
@@ -415,16 +414,16 @@ label good_end:
     jump end
 
 label bad_end:
-    "[player] выгоняет Лизу с громким хлопком двери"
+    "[z] выгоняет Лизу с громким хлопком двери"
 
-    player """
+    z """
     {i}Прикопалась...{/i}
 
     {i}Не нужна мне её помощь...{/i}
     """
 
     """
-    [player] продолжает жить так же, как и раньше.
+    [z] продолжает жить так же, как и раньше.
 
     Панические атаки сопровождают его каждый день.
 
@@ -435,7 +434,7 @@ label bad_end:
     Он стоит на стуле, верёвка в руке.
     """
 
-    player """
+    z """
     {i}всхлипывает{/i} 
 
     Я так больше не могу...

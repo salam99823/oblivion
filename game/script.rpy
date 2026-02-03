@@ -1,5 +1,5 @@
 ﻿# Definition of characters
-define player = Character("player_name", dynamic=True, color="#d17930")
+define z = Character("player_name", dynamic=True, color="#d17930")
 define boris = Character(_("Борис"), image="boris", color="#2a2a78")
 define customer = Character(_("Клиент"), color="#999")
 define manager = Character(_("Менеджер"), image="manager")
