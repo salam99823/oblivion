@@ -153,7 +153,7 @@ define config.save_directory = "oblivion-1763815264"
 ##
 ## Иконка, показываемая на панели задач или на dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/window_icon.jpg"
 
 
 ## Настройка Дистрибутива ######################################################
