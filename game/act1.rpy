@@ -12,6 +12,7 @@ label work_day_at_fastfood:
     pause 1
     show silhouette 1 at silhouette
     with dissolve
+    play music toes
 
     # TODO: Add work noise
 

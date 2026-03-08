@@ -24,7 +24,6 @@ label start:
     $ player_name = player_name.strip().capitalize()
     if not player_name:
       $ player_name = _("Женя")
-    play music toes
     call act1
     call act2
     call act3

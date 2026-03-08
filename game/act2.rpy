@@ -269,7 +269,9 @@ label rutine:
 
     Тогда-то я и увидел...
     Точно такой же браслет, как у Сони.
-
+    """
+    play music "call boy.mp3"
+    """
     Воспоминания накрыли волной, было сложно дышать.
 
     Вроде бы это называют...
@@ -286,6 +288,7 @@ label rutine:
     """
     {static}{i}захлёбывается слезами и резко падает{/i}{/static}
     """
+    play music toes
     z """
     Тогда Лиза опять привела меня домой...
 
@@ -332,6 +335,7 @@ label final_choice:
             jump bad_end
 
 label good_end:
+    play music "the blonde.mp3"
     """
     Сказать, что меня это не заинтриговало - это ничего не сказать.
 
@@ -393,6 +397,7 @@ label good_end:
     почему бы и нет?
     """
     scene bg church with fade
+    play music cinema
     z """
     И сейчас, пройдя все эти испытания, я стою здесь.
 
